@@ -3,8 +3,8 @@
         <div class="product-item" *ngFor="let product of products">
             <img [src]="product.image" alt="Product Image" class="product-image img-fluid">
             <div class="product-details">
-                <h3 class="product-title">{{ product.name }}</h3>
-                <p class="product-price">{{ product.price }}</p>
+                <h3 class="product-title">{{ product.name.length > 48 ? (product.name | slice:0:48) + '...' : product.name }}</h3>
+                <p class="product-price">{{ product.price }}€</p>
             </div>
         </div>
     </div>

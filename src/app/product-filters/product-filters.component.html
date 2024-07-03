@@ -4,26 +4,28 @@
         <div class="dropdown">
             <div class="filter-item">Filtrar</div>
             <div class="dropdown-content">
-                <label class="form-label">Categorías:</label>
-                <div class="filter-option form-check">
-                    <input class="form-check-input" type="checkbox" id="belleza" name="belleza">
-                    <label class="form-check-label" for="belleza">Belleza</label>
+                <label>Categorías:</label>
+                <div class="filter-option">
+                    <input type="checkbox" id="belleza" name="belleza" (change)="onCategoryChange('Belleza', $event)">
+                    <label for="belleza">Belleza</label>
                 </div>
-                <div class="filter-option form-check">
-                    <input class="form-check-input" type="checkbox" id="tecnologia" name="tecnologia">
-                    <label class="form-check-label" for="tecnologia">Tecnología</label>
+                <div class="filter-option">
+                    <input type="checkbox" id="tecnologia" name="tecnologia"
+                        (change)="onCategoryChange('Tecnología', $event)">
+                    <label for="tecnologia">Tecnología</label>
                 </div>
-                <div class="filter-option form-check">
-                    <input class="form-check-input" type="checkbox" id="jardin" name="jardin">
-                    <label class="form-check-label" for="jardin">Jardín</label>
+                <div class="filter-option">
+                    <input type="checkbox" id="jardin" name="jardin" (change)="onCategoryChange('Jardín', $event)">
+                    <label for="jardin">Jardín</label>
                 </div>
-                <div class="filter-option form-check">
-                    <input class="form-check-input" type="checkbox" id="deporte" name="deporte">
-                    <label class="form-check-label" for="deporte">Deporte</label>
+                <div class="filter-option">
+                    <input type="checkbox" id="deporte" name="deporte" (change)="onCategoryChange('Deporte', $event)">
+                    <label for="deporte">Deporte</label>
                 </div>
-                <div class="filter-option form-check">
-                    <input class="form-check-input" type="checkbox" id="herramientas" name="herramientas">
-                    <label class="form-check-label" for="herramientas">Herramientas</label>
+                <div class="filter-option">
+                    <input type="checkbox" id="herramientas" name="herramientas"
+                        (change)="onCategoryChange('Herramientas', $event)">
+                    <label for="herramientas">Herramientas</label>
                 </div>
             </div>
         </div>
@@ -31,8 +33,8 @@
         <div class="dropdown">
             <div class="filter-item">Ordenar</div>
             <div class="dropdown-content">
-                <div class="sort-item">Precio: Ascendente</div>
-                <div class="sort-item">Precio: Descendente</div>
+                <div class="sort-item" (click)="onSortAscending()">Precio: Ascendente</div>
+                <div class="sort-item" (click)="onSortDescending()">Precio: Descendente</div>
             </div>
         </div>
     </div>

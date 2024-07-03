@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductsGridComponent } from './products-grid/products-grid.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -12,8 +12,12 @@ import { ProductFiltersComponent } from './product-filters/product-filters.compo
     <main>
       <app-navbar />
       <section class="content">
-        <app-product-filters />
-        <app-products-grid />
+        <app-product-filters 
+          (sortDescending)="sortProductsDescending()"
+          (sortAscending)="sortProductsAscending()"
+          (categoryChange)="updateSelectedCategories($event)"
+        />
+        <app-products-grid #productGrid />
       </section>
     </main>
   `,
@@ -21,4 +25,18 @@ import { ProductFiltersComponent } from './product-filters/product-filters.compo
 })
 export class AppComponent {
   title = 'Chollazon';
+
+  @ViewChild('productGrid') productGrid!: ProductsGridComponent;
+
+  sortProductsDescending() {
+    this.productGrid.sortProductsDescending();
+  }
+
+  sortProductsAscending() {
+    this.productGrid.sortProductsAscending();
+  }
+
+  updateSelectedCategories(event: { category: string, isChecked: boolean }) {
+    this.productGrid.updateSelectedCategories(event.category, event.isChecked);
+  }
 }
