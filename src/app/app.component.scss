@@ -2,3 +2,10 @@
     width: 60%;
     margin: 2.4em auto;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .content {
+        width: 90%;
+    }
+}
