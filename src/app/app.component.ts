@@ -3,15 +3,17 @@ import { RouterOutlet } from '@angular/router';
 import { ProductsGridComponent } from './products-grid/products-grid.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductFiltersComponent } from './product-filters/product-filters.component';
+import { ProductSearchComponent } from './product-search/product-search.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, ProductFiltersComponent, ProductsGridComponent],
+  imports: [RouterOutlet, NavbarComponent, ProductSearchComponent, ProductFiltersComponent, ProductsGridComponent],
   template: `
     <main>
       <app-navbar />
       <section class="content">
+        <app-product-search (search)="filterProductsBySearch($event)"></app-product-search>
         <app-product-filters 
           (sortDescending)="sortProductsDescending()"
           (sortAscending)="sortProductsAscending()"
@@ -38,5 +40,9 @@ export class AppComponent {
 
   updateSelectedCategories(event: { category: string, isChecked: boolean }) {
     this.productGrid.updateSelectedCategories(event.category, event.isChecked);
+  }
+
+  filterProductsBySearch(searchText: string) {
+    this.productGrid.filterProductsBySearch(searchText);
   }
 }

@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductsGridComponent {
 
-  // Populate the products array with data
   allProducts = [
     { name: 'Onherm Sistema de Riego Por Goteo Automático Solar, Kit Riego Por Goteo Autorriego para Macetas, Regar Regularmente e Manguera de 15M para Interior Exterior Jardín Terraza Balcone Plantas VerduraJBL Stage2 624 Juego de altavoces coche de 2 vías de Harman Kardon - 240 vatios JBL echo auto 16 - 17 cm', price: 10, image: 'https://m.media-amazon.com/images/I/61AzZfyGW7L._AC_SL1000_.jpg', category: 'Herramientas' },
     { name: 'Govee Tira LED 5m, WiFi Luces LED Habitacion Inteligente RGB, Funciona con Alexa, Google Assistant y App, 64 Modos de Escena y Sincronización de Música para PC Gaming, Techo y Fiesta', price: 20, image: 'https://m.media-amazon.com/images/I/71fTB5w2VoL._AC_SL1500_.jpg', category: 'Deporte' },
@@ -34,6 +33,7 @@ export class ProductsGridComponent {
 
   products = [...this.allProducts];
   selectedCategories: Set<string> = new Set();
+  noResults = false;
 
   sortProductsDescending() {
     this.products.sort((a, b) => b.price - a.price);
@@ -59,5 +59,22 @@ export class ProductsGridComponent {
       this.selectedCategories.delete(category);
     }
     this.filterProductsByCategory();
+  }
+
+  filterProductsBySearch(searchText: string) {
+    if (searchText === '') {
+      this.products = [...this.allProducts];
+      this.noResults = false;
+    } else {
+      this.products = this.allProducts.filter(product =>
+        product.name.toLowerCase().includes(searchText.toLowerCase())
+      );
+      this.noResults = this.products.length === 0;
+    }
+  }
+
+  clearSearch() {
+    this.products = [...this.allProducts];
+    this.noResults = false;
   }
 }

@@ -39,6 +39,20 @@
     font-weight: bold;
 }
 
+.no-results-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.alert-warning {
+    width: 100%;
+    margin: 0 auto;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
     .product-grid {
