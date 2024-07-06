@@ -4,6 +4,12 @@
 html {
     font-family: "Raleway", sans-serif;
 }
+
+html,
+body {
+    height: 100%;
+}
+
 body {
     margin: 0;
     background-color: $page-background-color;
@@ -11,4 +17,7 @@ body {
 
 main {
     background-color: $page-background-color;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }

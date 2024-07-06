@@ -4,11 +4,12 @@ import { ProductsGridComponent } from './products-grid/products-grid.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductFiltersComponent } from './product-filters/product-filters.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, ProductSearchComponent, ProductFiltersComponent, ProductsGridComponent],
+  imports: [RouterOutlet, NavbarComponent, ProductSearchComponent, ProductFiltersComponent, ProductsGridComponent, FooterComponent],
   template: `
     <main>
       <app-navbar />
@@ -21,6 +22,7 @@ import { ProductSearchComponent } from './product-search/product-search.componen
         />
         <app-products-grid #productGrid />
       </section>
+      <app-footer></app-footer>
     </main>
   `,
   styleUrl: './app.component.scss'
