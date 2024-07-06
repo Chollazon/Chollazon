@@ -19,6 +19,19 @@ export class ProductFiltersComponent {
   @Output() sortAscending = new EventEmitter<void>();
   @Output() categoryChange = new EventEmitter<{ category: string, isChecked: boolean }>();
 
+
+  sortOrder: number = 0;
+
+  toggleSortOrder() {
+    if (this.sortOrder === 0) {
+      this.sortOrder = 1;
+      this.onSortDescending();
+    } else {
+      this.sortOrder = 0;
+      this.onSortAscending();
+    }
+  }
+
   onSortDescending() {
     this.sortDescending.emit();
   }

@@ -24,12 +24,9 @@
             </div>
         </div>
         <!-- Ordenar -->
-        <div class="dropdown">
-            <div class="filter-item">Ordenar</div>
-            <div class="dropdown-content">
-                <div class="sort-item" (click)="onSortAscending()">Precio: Ascendente</div>
-                <div class="sort-item" (click)="onSortDescending()">Precio: Descendente</div>
-            </div>
+        <div class="sort-item" (click)="toggleSortOrder()">
+            Precio: {{ sortOrder === 0 ? 'Ascendente' : 'Descendente' }}
+            <i [ngClass]="sortOrder === 0 ? 'fas fa-arrow-up' : 'fas fa-arrow-down'"></i>
         </div>
     </div>
 </div>
