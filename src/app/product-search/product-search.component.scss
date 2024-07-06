@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+button {
+    background-color: $secondary-color;
+    border: 0.5px solid $secondary-color;
+}
+
+input {
+    border: 0.5px solid $secondary-color;
+}

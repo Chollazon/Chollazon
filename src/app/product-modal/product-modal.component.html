@@ -1,0 +1,24 @@
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title mb-4" id="productModalLabel">{{ product?.name }}</h5>
+                <div class="d-flex">
+                    <div class="product-image-container me-3">
+                        <img [src]="product?.image" alt="{{ product?.name }}" class="img-fluid product-image">
+                    </div>
+                    <div class="product-details">
+                        <p><strong>Precio:</strong> {{ product?.price }}€</p>
+                        <p><strong>Descripción:</strong> {{ product?.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

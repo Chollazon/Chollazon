@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="product-grid" *ngIf="!noResults">
-        <div class="product-item" *ngFor="let product of products">
+        <div class="product-item" *ngFor="let product of products" (click)="showProductDetails(product)">
             <div class="product-image-container">
                 <img [src]="product.image" alt="{{ product.name }}" class="product-image">
             </div>
@@ -19,4 +19,5 @@
             </div>
         </div>
     </div>
+    <app-product-modal [product]="selectedProduct"></app-product-modal>
 </div>
