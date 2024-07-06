@@ -1,6 +1,11 @@
+@import '../../src/styles/variables';
+
 .content {
-    width: 60%;
+    width: 70%;
     margin: 2.4em auto;
+    background-color: $text-color;
+    padding: 1em;
+    border-radius: 2em;
 }
 
 /* Media query for mobile devices */

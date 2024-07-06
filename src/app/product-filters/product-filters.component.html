@@ -1,35 +1,29 @@
 <div class="container mt-3">
     <div class="filter-bar">
-        <!-- Dropdown de Filtrar -->
-        <div class="dropdown">
-            <div class="filter-item">Filtrar</div>
-            <div class="dropdown-content">
-                <label>Categorías:</label>
-                <div class="filter-option">
-                    <input type="checkbox" id="belleza" name="belleza" (change)="onCategoryChange('Belleza', $event)">
-                    <label for="belleza">Belleza</label>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="tecnologia" name="tecnologia"
-                        (change)="onCategoryChange('Tecnología', $event)">
-                    <label for="tecnologia">Tecnología</label>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="jardin" name="jardin" (change)="onCategoryChange('Jardín', $event)">
-                    <label for="jardin">Jardín</label>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="deporte" name="deporte" (change)="onCategoryChange('Deporte', $event)">
-                    <label for="deporte">Deporte</label>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="herramientas" name="herramientas"
-                        (change)="onCategoryChange('Herramientas', $event)">
-                    <label for="herramientas">Herramientas</label>
-                </div>
+        <!-- Filtros de Categorías -->
+        <div class="filter-categories">
+            <div class="filter-item" (click)="onCategoryChange('Belleza', $event)">
+                <input type="checkbox" id="belleza" name="belleza" hidden>
+                <label for="belleza">Belleza</label>
+            </div>
+            <div class="filter-item" (click)="onCategoryChange('Tecnología', $event)">
+                <input type="checkbox" id="tecnologia" name="tecnologia" hidden>
+                <label for="tecnologia">Tecnología</label>
+            </div>
+            <div class="filter-item" (click)="onCategoryChange('Jardín', $event)">
+                <input type="checkbox" id="jardin" name="jardin" hidden>
+                <label for="jardin">Jardín</label>
+            </div>
+            <div class="filter-item" (click)="onCategoryChange('Deporte', $event)">
+                <input type="checkbox" id="deporte" name="deporte" hidden>
+                <label for="deporte">Deporte</label>
+            </div>
+            <div class="filter-item" (click)="onCategoryChange('Herramientas', $event)">
+                <input type="checkbox" id="herramientas" name="herramientas" hidden>
+                <label for="herramientas">Herramientas</label>
             </div>
         </div>
-        <!-- Dropdown de Ordenar -->
+        <!-- Ordenar -->
         <div class="dropdown">
             <div class="filter-item">Ordenar</div>
             <div class="dropdown-content">

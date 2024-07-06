@@ -2,7 +2,7 @@
 
 .filter-bar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: $primary-color;
@@ -11,16 +11,40 @@
     margin-bottom: 0.5em;
 }
 
+.filter-categories {
+    display: flex;
+    gap: 15px;
+}
+
 .filter-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     margin-right: 20px;
     cursor: pointer;
     font-size: 1em;
     color: $text-color;
     text-decoration: none;
+    position: relative;
 }
 
-.filter-item:hover {
-    text-decoration: underline;
+.filter-item input[type="checkbox"] {
+    display: none;
+}
+
+.filter-item label {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.filter-item input[type="checkbox"]:checked+label {
+    background-color: $accent-color;
+    color: #fff;
+}
+
+.filter-item:hover label {
+    text-decoration: none;
 }
 
 .dropdown {
@@ -42,8 +66,7 @@
     display: block;
 }
 
-.sort-item,
-.filter-option {
+.sort-item {
     margin: 5px 0;
     cursor: pointer;
     font-size: 1em;
@@ -51,11 +74,6 @@
     text-decoration: none;
 }
 
-.sort-item:hover,
-.filter-option:hover {
+.sort-item:hover {
     text-decoration: underline;
-}
-
-.filter-option input {
-    margin-right: 10px;
 }
