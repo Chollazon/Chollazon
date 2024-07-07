@@ -52,9 +52,48 @@
 }
 
 .sort-item {
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
 .sort-item i {
     margin-left: 0.1em;
+}
+
+.sort-text-wrapper {
+    position: relative;
+    height: 1.2em;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+}
+
+.sort-text-wrapper.desc {
+    transform: translateY(-1.2em);
+}
+
+.sort-text {
+    height: 1.2em;
+    line-height: 1.2em;
+    white-space: nowrap;
+    transition: opacity 0.5s ease;
+}
+
+.sort-text-wrapper .sort-text:first-child {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.sort-text-wrapper .sort-text:last-child {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.sort-text-wrapper.desc .sort-text:first-child {
+    opacity: 0;
+}
+
+.sort-text-wrapper.desc .sort-text:last-child {
+    opacity: 1;
 }
