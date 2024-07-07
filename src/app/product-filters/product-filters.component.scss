@@ -12,7 +12,9 @@
 
 .filter-categories {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
+    flex-grow: 1;
 }
 
 .filter-item {
@@ -96,4 +98,27 @@
 
 .sort-text-wrapper.desc .sort-text:last-child {
     opacity: 1;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1vh;
+    }
+
+    .sort-item {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .filter-categories {
+        width: 100%;
+    }
+
+    .filter-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
