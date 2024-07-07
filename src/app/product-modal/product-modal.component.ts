@@ -10,4 +10,14 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductModalComponent {
   @Input() product: any;
+
+  shareProduct() {
+    const shareData = {
+      title: this.product.name,
+      text: `Estoy interesado en este producto:\n${this.product.name}`
+    }
+    if (navigator.share) {
+      navigator.share(shareData)
+    }
+  }
 }
